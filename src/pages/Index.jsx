@@ -12,9 +12,9 @@ const Index = () => {
 
   return (
     <Container maxW="container.xl" p={5}>
-      <Flex h="90vh" bg="gray.100" borderRadius="lg" overflow="hidden">
-        {/* Sidebar: Contact List */}
-        <VStack w="300px" p={5} spacing={4} bg="white" boxShadow="md">
+      <Flex h="90vh" bg="gray.50" borderRadius="lg" overflow="hidden">
+        {}
+        <VStack w="300px" p={5} spacing={6} bg="gray.200" boxShadow="sm">
           <Heading size="md">Contacts</Heading>
           <Divider />
           {contacts.map((contact, index) => (
@@ -25,8 +25,8 @@ const Index = () => {
           ))}
         </VStack>
 
-        {/* Chat Area */}
-        <Flex direction="column" flex="1" p={5}>
+        {}
+        <Flex direction="column" flex="1" p={5} bg="blue.50">
           {/* Chat Header */}
           <Flex align="center" p={3} boxShadow="sm" bg="white">
             <Avatar size="md" icon={<FaUserCircle />} />
@@ -40,8 +40,8 @@ const Index = () => {
           {/* Message Display Area */}
           <VStack flex="1" p={3} spacing={4} align="start" overflowY="auto">
             {messages.map((message, index) => (
-              <Flex key={index} alignSelf={message.sender === "You" ? "end" : "start"}>
-                <Box p={3} bg={message.sender === "You" ? "blue.100" : "gray.200"} borderRadius="md">
+              <Flex key={index} alignSelf={message.sender === "You" ? "end" : "start"} position="relative">
+                <Box p={3} bg={message.sender === "You" ? "green.100" : "blue.100"} borderRadius="lg" after={message.sender === "You" ? { content: '""', position: "absolute", right: "100%", bottom: "0", width: "0", height: "0", border: "10px solid transparent", borderRightColor: "green.100" } : { content: '""', position: "absolute", left: "100%", bottom: "0", width: "0", height: "0", border: "10px solid transparent", borderLeftColor: "blue.100" }}>
                   <Text fontSize="sm">{message.content}</Text>
                   <Text fontSize="xs" opacity="0.7">
                     {message.time}
@@ -52,10 +52,10 @@ const Index = () => {
           </VStack>
 
           {/* Input Box */}
-          <InputGroup boxShadow="sm" mt={3}>
-            <Input pr="3.5rem" placeholder="Type a message..." />
-            <InputRightElement width="3rem">
-              <IconButton aria-label="Send message" icon={<FaPaperPlane />} />
+          <InputGroup boxShadow="sm" mt={3} bg="white" borderRadius="lg">
+            <Input pr="3.5rem" placeholder="Type a message..." borderRadius="lg" />
+            <InputRightElement width="4rem">
+              <IconButton aria-label="Send message" icon={<FaPaperPlane />} borderRadius="lg" />
             </InputRightElement>
           </InputGroup>
         </Flex>
