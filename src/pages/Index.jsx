@@ -1,4 +1,4 @@
-import { Box, Flex, Input, InputGroup, InputRightElement, VStack, Text, Avatar, Divider, IconButton, Container, Heading, Spacer } from "@chakra-ui/react";
+import { Box, Flex, Input, InputGroup, InputRightElement, VStack, Text, Avatar, Divider, IconButton, Container, Heading, Spacer, Button } from "@chakra-ui/react";
 import { FaPaperPlane, FaUserCircle } from "react-icons/fa";
 
 const Index = () => {
@@ -35,6 +35,9 @@ const Index = () => {
             </Text>
             <Spacer />
             <Text fontSize="sm">Last seen today at 10:35 AM</Text>
+            <Button colorScheme="blue" size="sm" ml={4}>
+              Subscribe
+            </Button>
           </Flex>
 
           {/* Message Display Area */}
